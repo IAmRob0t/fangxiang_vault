@@ -1,0 +1,9 @@
+{
+  "pinned": [
+    "graph:open-local",
+    "sync:view-version-history",
+    "graph:open",
+    "number-headings-obsidian:remove-number-headings",
+    "number-headings-obsidian:number-headings"
+  ]
+}

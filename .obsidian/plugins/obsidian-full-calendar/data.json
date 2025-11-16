@@ -1,0 +1,92 @@
+{
+  "calendarSources": [
+    {
+      "type": "caldav",
+      "name": "计划",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/15789F17-4262-4E35-8129-36B0C240180B/",
+      "color": "#FF2968",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    },
+    {
+      "type": "caldav",
+      "name": "玩手机 / 电脑",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/187FAD3B-E1C2-42AD-8652-EF6D6533528A/",
+      "color": "#2458D5",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    },
+    {
+      "type": "caldav",
+      "name": "兴趣爱好",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/1AA0B59C-A07F-4DAD-8B2D-61A5249CED79/",
+      "color": "#00A3FF",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    },
+    {
+      "type": "caldav",
+      "name": "睡觉💤",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/5A4D8AA4-B8C1-4B18-9FA1-47978F3E5FB4/",
+      "color": "#707070",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    },
+    {
+      "type": "caldav",
+      "name": "复盘",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/7427628A-2FB4-4B5B-8484-52ED8F5D9AD0/",
+      "color": "#FFFFFF",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    },
+    {
+      "type": "caldav",
+      "name": "自我提升",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/87B3EFB2-22FD-484E-83DC-F5F72704D0A3/",
+      "color": "#1BADF8",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    },
+    {
+      "type": "caldav",
+      "name": "宠爱自己",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/BABD122B-29F6-426C-908A-6B0C7B0246B5/",
+      "color": "#E27AFC",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    },
+    {
+      "type": "caldav",
+      "name": "🏋️",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/E1B91930-3B81-4E81-AA93-59B713F1EAAD/",
+      "color": "#63DA38",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    },
+    {
+      "type": "caldav",
+      "name": "Morning Routine",
+      "url": "https://caldav.icloud.com",
+      "homeUrl": "https://caldav.icloud.com/20115163266/calendars/EE021F92-460F-4356-9AD0-DEC3ADE866AF/",
+      "color": "#FFCC00",
+      "username": "13822908158@qq.com",
+      "password": "djkn-mklk-dlzq-aain"
+    }
+  ],
+  "defaultCalendar": 0,
+  "firstDay": 1,
+  "initialView": {
+    "desktop": "timeGridWeek",
+    "mobile": "timeGridDay"
+  },
+  "timeFormat24h": true
+}

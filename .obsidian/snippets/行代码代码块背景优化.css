@@ -1,0 +1,53 @@
+/* 修改代码块背景颜色 - 明亮模式和暗黑模式 */
+
+/* 行内代码 - 明亮模式 */
+.theme-light :not(pre) > code {
+  background-color: #EBEBEB !important;
+}
+
+/* 代码块 - 明亮模式 */
+.theme-light pre {
+  background-color: #EBEBEB !important;
+}
+
+.theme-light .markdown-rendered pre {
+  background-color: #EBEBEB !important;
+}
+
+/* 编辑模式下的代码块 - 明亮模式 */
+.theme-light .cm-s-obsidian .HyperMD-codeblock {
+  background-color: #EBEBEB !important;
+}
+
+/* 编辑模式下的行内代码 - 明亮模式 */
+.theme-light .cm-s-obsidian span.cm-inline-code {
+  background-color: #EBEBEB !important;
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
+
+/* 行内代码 - 暗黑模式 */
+.theme-dark :not(pre) > code {
+  background-color: #333333 !important;
+}
+
+/* 代码块 - 暗黑模式 */
+.theme-dark pre {
+  background-color: #333333 !important;
+}
+
+.theme-dark .markdown-rendered pre {
+  background-color: #333333 !important;
+}
+
+/* 编辑模式下的代码块 - 暗黑模式 */
+.theme-dark .cm-s-obsidian .HyperMD-codeblock {
+  background-color: #333333 !important;
+}
+
+/* 编辑模式下的行内代码 - 暗黑模式 */
+.theme-dark .cm-s-obsidian span.cm-inline-code {
+  background-color: #333333 !important;
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}

@@ -1,0 +1,37 @@
+{
+  "promptDelete": false,
+  "newFileLocation": "folder",
+  "attachmentFolderPath": "./attachments",
+  "showLineNumber": false,
+  "vimMode": false,
+  "showInlineTitle": true,
+  "smartIndentList": true,
+  "newFileFolderPath": "00_Inbox",
+  "alwaysUpdateLinks": true,
+  "readableLineLength": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "strictLineBreaks": false,
+  "mobileToolbarCommands": [
+    "editor:insert-codeblock",
+    "editor:set-heading",
+    "editor:insert-tag",
+    "editor:attach-file",
+    "editor:toggle-bullet-list",
+    "editor:toggle-numbered-list",
+    "editor:toggle-checklist-status",
+    "editor:indent-list",
+    "editor:unindent-list",
+    "editor:undo",
+    "editor:redo",
+    "editor:configure-toolbar"
+  ],
+  "newLinkFormat": "relative",
+  "showUnsupportedFiles": true,
+  "useMarkdownLinks": true
+}

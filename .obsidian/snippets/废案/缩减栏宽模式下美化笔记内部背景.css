@@ -1,0 +1,181 @@
+/* @settings
+name: 缩减栏框下内部背景
+id: background-under-frame
+settings:
+-
+  id: light-background-color
+  title: 浅色模式的背景色
+  type: variable-text
+  default: #EBEBEB
+-
+  id: dark-background-color
+  title: 深色模式的背景色
+  type: variable-text
+  default: #262626
+-
+  id: top-tool-height
+  title: 阅读模式距离背景的高度
+  type: variable-text
+  default: 38px
+
+*/
+
+body {
+  --light-background-color: #EBEBEB;
+  --dark-background-color: #262626;
+  --top-tool-height: 38px;
+}
+
+/* 适配Zomm插件：防止遮挡 */
+.markdown-source-view.mod-cm6 .cm-panels {
+  background-color: inherit;
+  color: inherit;
+  width: calc(var(--file-line-width) + 6%);
+  left: calc(47% - var(--file-line-width) / 2);
+  font-size: small;
+}
+
+/* 适配SNW插件的笔记引用按钮 */
+.snw-header-count-wrapper {
+    position:fixed;
+    right: calc(48% - var(--file-line-width) / 2);
+}
+
+
+/* 浅色主题 */
+.theme-light .view-content > .markdown-source-view.mod-cm6::after {
+  /* 设置背景属性 */
+  content: "";
+  position: fixed;
+  background-color: var(--light-background-color);
+  
+  /* 调整壁纸的大小 */
+  height: 100%;
+  width: 100%;
+
+  /* 设置笔记遮挡属性 */
+  left: 0;
+
+  /* top: var(--mod-top-height); */
+  transform: scale(1);
+
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+  transition: none;
+
+  -webkit-mask: linear-gradient(
+    to right,
+    var(--background-primary) 0%,
+    var(--background-primary) calc(47% - calc(var(--file-line-width) / 2)),
+    transparent calc(47% - var(--file-line-width) / 2),
+    transparent calc(53% + var(--file-line-width) / 2),
+    var(--background-primary) calc(53% + calc(var(--file-line-width) / 2)),
+    var(--background-primary) 100%
+  );
+}
+
+.theme-light
+  .markdown-preview-view:not(.colse-show-bg-image):not(
+    .kanban-plugin__markdown-preview-view
+  ):not(.database-plugin__container)::after {
+  /* 设置背景属性 */
+  content: "";
+  position: fixed;
+  background-color: var(--light-background-color);
+
+  /* 调整壁纸的大小 */
+  height: 100%;
+  width: 100%;
+
+  /* 设置笔记遮挡属性 */
+  right: 0;
+  top: var(--top-tool-height);
+
+  /* top: var(--mod-top-height); */
+  transform: scale(1);
+
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+  transition: none;
+
+  -webkit-mask: linear-gradient(
+    to right,
+    var(--background-primary) 0%,
+    var(--background-primary) calc(47% - calc(var(--file-line-width) / 2)),
+    transparent calc(47% - var(--file-line-width) / 2),
+    transparent calc(53% + var(--file-line-width) / 2),
+    var(--background-primary) calc(53% + calc(var(--file-line-width) / 2)),
+    var(--background-primary) 100%
+  );
+}
+
+/* 深色主题 */
+.theme-dark .view-content > .markdown-source-view.mod-cm6::after {
+  /* 设置背景属性 */
+  content: "";
+  position: fixed;
+  background-color: var(--dark-background-color);
+
+  /* 调整壁纸的大小 */
+  height: 100%;
+  width: 100%;
+
+  /* 设置笔记遮挡属性 */
+  left: 0;
+
+  /* top: var(--mod-top-height); */
+  transform: scale(1);
+
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+  transition: none;
+
+  -webkit-mask: linear-gradient(
+    to right,
+    var(--background-primary) 0%,
+    var(--background-primary) calc(47% - calc(var(--file-line-width) / 2)),
+    transparent calc(47% - var(--file-line-width) / 2),
+    transparent calc(53% + var(--file-line-width) / 2),
+    var(--background-primary) calc(53% + calc(var(--file-line-width) / 2)),
+    var(--background-primary) 100%
+  );
+}
+
+.theme-dark
+  .markdown-preview-view:not(.colse-show-bg-image):not(
+    .kanban-plugin__markdown-preview-view
+  ):not(.database-plugin__container)::after {
+  /* 设置背景属性 */
+  content: "";
+  position: fixed;
+  background-color: var(--dark-background-color);
+
+  /* 调整壁纸的大小 */
+  height: 100%;
+  width: 100%;
+
+  /* 设置笔记遮挡属性 */
+  left: 0;
+  top: var(--top-tool-height);
+
+  /* top: var(--mod-top-height); */
+  transform: scale(1);
+
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+  transition: none;
+
+  -webkit-mask: linear-gradient(
+    to right,
+    var(--background-primary) 0%,
+    var(--background-primary) calc(47% - calc(var(--file-line-width) / 2)),
+    transparent calc(47% - var(--file-line-width) / 2),
+    transparent calc(53% + var(--file-line-width) / 2),
+    var(--background-primary) calc(53% + calc(var(--file-line-width) / 2)),
+    var(--background-primary) 100%
+  );
+}

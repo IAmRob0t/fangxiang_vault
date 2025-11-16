@@ -1,0 +1,107 @@
+/* 🌈 彩虹标题 CSS 片段（优化版）
+   - 建议1：使用 CSS 变量统一管理颜色和权重
+   - 建议5：分层级设置 margin-top 增强层次感
+   - 去掉所有阴影风格
+*/
+
+/* === 全局颜色 & 字重变量 === */
+:root {
+  /* 彩虹色定义（亮色模式） */
+  --h2-color: #4DA6FF; /* 77,166,255 */
+  --h3-color: #6A96FF;
+  --h4-color: #8886FF;
+  --h5-color: #A076FF;
+  --h6-color: #B366FF;
+
+  /* 字重定义 */
+  --h2-weight: 800;
+  --h3-weight: 700;
+  --h4-weight: 600;
+  --h5-weight: 500;
+  --h6-weight: 400;
+}
+
+/* 暗色模式下颜色可单独调整（可按需调亮或调暗） */
+.theme-dark {
+  --h2-color: #79C0FF;
+  --h3-color: #9F88FF;
+  --h4-color: #B488FF;
+  --h5-color: #C076FF;
+  --h6-color: #D066FF;
+}
+
+/* === 编辑模式（CodeMirror）标题样式 === */
+.cm-header.cm-header-1 {
+  /* 一级标题保持默认 */
+}
+
+.cm-header.cm-header-2 {
+  color: var(--h2-color);
+  font-weight: var(--h2-weight);
+}
+
+.cm-header.cm-header-3 {
+  color: var(--h3-color);
+  font-weight: var(--h3-weight);
+}
+
+.cm-header.cm-header-4 {
+  color: var(--h4-color);
+  font-weight: var(--h4-weight);
+}
+
+.cm-header.cm-header-5 {
+  color: var(--h5-color);
+  font-weight: var(--h5-weight);
+}
+
+.cm-header.cm-header-6 {
+  color: var(--h6-color);
+  font-weight: var(--h6-weight);
+}
+
+/* === 阅读模式（Markdown渲染）标题样式 === */
+.markdown-rendered h1 {
+  /* 一级标题保持默认 */
+}
+
+.markdown-rendered h2 {
+  color: var(--h2-color);
+  font-weight: var(--h2-weight);
+  margin-top: 1.5em; /* 层级感 */
+}
+
+.markdown-rendered h3 {
+  color: var(--h3-color);
+  font-weight: var(--h3-weight);
+  margin-top: 1.2em;
+}
+
+.markdown-rendered h4 {
+  color: var(--h4-color);
+  font-weight: var(--h4-weight);
+  margin-top: 1em;
+}
+
+.markdown-rendered h5 {
+  color: var(--h5-color);
+  font-weight: var(--h5-weight);
+  margin-top: 0.8em;
+}
+
+.markdown-rendered h6 {
+  color: var(--h6-color);
+  font-weight: var(--h6-weight);
+  margin-top: 0.6em;
+}
+
+/* 平滑过渡效果 */
+.cm-header,
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}

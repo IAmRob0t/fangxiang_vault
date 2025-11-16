@@ -1,0 +1,46 @@
+{
+  "is_obsidian_vault": true,
+  "smart_blocks": {
+    "embed_blocks": true,
+    "min_chars": 200
+  },
+  "smart_sources": {
+    "single_file_data_path": ".smart-env/smart_sources.json",
+    "min_chars": 200,
+    "embed_model": {
+      "adapter": "openai",
+      "transformers": {
+        "legacy_transformers": false,
+        "model_key": "nomic-ai/nomic-embed-text-v1.5"
+      },
+      "TaylorAI/bge-micro-v2": {},
+      "openai": {
+        "model_key": "text-embedding-ada-002"
+      },
+      "text-embedding-3-small": {},
+      "nomic-ai/nomic-embed-text-v1.5": {},
+      "text-embedding-ada-002": {}
+    },
+    "smart_change": {
+      "active": true
+    }
+  },
+  "file_exclusions": "Untitled",
+  "folder_exclusions": "smart-chats",
+  "smart_view_filter": {
+    "render_markdown": true,
+    "show_full_path": false
+  },
+  "excluded_headings": "",
+  "smart_threads": {
+    "chat_model": {
+      "adapter": "openai",
+      "openai": {
+        "model_key": "gpt-4o"
+      }
+    },
+    "embed_model": {
+      "model_key": "None"
+    }
+  }
+}

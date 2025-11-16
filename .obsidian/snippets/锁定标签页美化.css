@@ -1,0 +1,14 @@
+.workspace-tab-header-container-inner .workspace-tab-header:has(.mod-pinned) .workspace-tab-header-inner-title {
+  display: none;
+}
+
+.workspace-tab-header-inner:has(.mod-pinned) {
+  padding-left: 3px;
+}
+
+.workspace-tab-header-container-inner .workspace-tab-header:has(.mod-pinned) {
+  margin-left: 0 !important;
+  width: 60px !important;
+  padding: 0 0 2px;
+  max-width: 60px;
+}

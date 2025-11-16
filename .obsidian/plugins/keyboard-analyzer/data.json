@@ -1,0 +1,72 @@
+{
+  "showStatusBarItem": true,
+  "defaultFilterSettings": {
+    "StrictModifierMatch": true,
+    "ViewWOhotkeys": true,
+    "OnlyCustom": false,
+    "OnlyDuplicates": false,
+    "FeaturedFirst": false,
+    "HighlightCustom": false,
+    "HighlightDuplicates": false,
+    "HighlightBuiltIns": false,
+    "DisplayIDs": false,
+    "ShowPluginBadges": true,
+    "GroupByPlugin": false,
+    "DisplayGroupAssignment": false,
+    "DisplayInternalModules": true,
+    "DisplaySystemShortcuts": false
+  },
+  "filters": {
+    "isUnifiedAcrossGroups": false,
+    "filterSettings": {
+      "StrictModifierMatch": true,
+      "ViewWOhotkeys": true,
+      "OnlyCustom": false,
+      "OnlyDuplicates": false,
+      "FeaturedFirst": false,
+      "HighlightCustom": false,
+      "HighlightDuplicates": false,
+      "HighlightBuiltIns": false,
+      "DisplayIDs": false,
+      "ShowPluginBadges": true,
+      "GroupByPlugin": false,
+      "DisplayGroupAssignment": false,
+      "DisplayInternalModules": true,
+      "DisplaySystemShortcuts": false
+    }
+  },
+  "featuredCommandIDs": [
+    "app:go-forward",
+    "workspace:undo-close-pane",
+    "global-search:open",
+    "editor:clear-formatting",
+    "editor:fold-all",
+    "editor:unfold-all",
+    "theme:toggle-light-dark"
+  ],
+  "commandGroups": [],
+  "lastOpenedGroupId": "all",
+  "pinKeyboardPanel": false,
+  "keyboardCollapsed": false,
+  "enableDeveloperOptions": false,
+  "devLoggingEnabled": false,
+  "keyboardDevTooltipsEnabled": false,
+  "emulatedOS": "none",
+  "useBakedKeyNames": true,
+  "allGroupOnOpen": "default",
+  "keyListenerScope": "activeView",
+  "modifierActivationMode": "click",
+  "searchDebounceMs": 200,
+  "quickViewHeight": 360,
+  "quickViewWidth": 420,
+  "quickViewAutoRun": true,
+  "settingsSchemaVersion": 1,
+  "filterSettings": {
+    "FeaturedFirst": true,
+    "StrictSearch": false,
+    "HighlightCustom": false,
+    "HighlightDuplicates": true,
+    "DisplayWOhotkeys": false,
+    "DisplayIDs": false
+  }
+}

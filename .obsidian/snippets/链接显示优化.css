@@ -1,0 +1,72 @@
+/***********************
+ * 跨模式通用链接样式 
+ ***********************/
+
+/* 编辑模式选择器 */
+.cm-s-obsidian span.cm-hmd-internal-link,  /* 编辑模式内链 */
+.cm-s-obsidian span.cm-link,              /* 编辑模式外链 */
+/* 预览模式选择器 */
+.markdown-preview-view .internal-link,    /* 预览模式内链 */
+.markdown-preview-view .external-link {   /* 预览模式外链 */
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+/*****颜色定义*****/
+/* 编辑模式内链 */
+.cm-s-obsidian span.cm-hmd-internal-link,
+/* 预览模式内链 */
+.markdown-preview-view .internal-link {
+  color: #4f46e5 !important; 
+}
+
+/* 编辑模式外链 */
+.cm-s-obsidian span.cm-link:not(.cm-hmd-internal-link),
+/* 预览模式外链 */
+.markdown-preview-view .external-link {
+  color: #3b82f6 !important;
+}
+
+/*****下划线特效*****/
+/* 通用伪元素 */
+.cm-hmd-internal-link::after,
+.internal-link::after,          /* 预览模式内链 */
+.external-link::after,          /* 预览模式外链 */
+.cm-link:not(.cm-hmd-internal-link)::after {  /* 编辑模式外链 */
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+/* 内部链接渐变 */
+.cm-hmd-internal-link::after,
+.internal-link::after {
+  background: linear-gradient(90deg, #4f46e5 0%, #818cf8 100%);
+}
+
+/* 外部链接渐变 */
+.external-link::after,
+.cm-link:not(.cm-hmd-internal-link)::after {
+  background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%);
+}
+
+/*****悬停效果*****/
+.cm-hmd-internal-link:hover::after,
+.internal-link:hover::after,
+.external-link:hover::after,
+.cm-link:not(.cm-hmd-internal-link):hover::after {
+  width: 100%;
+}
+
+/*****聚焦状态*****/
+.cm-active.cm-fat-link {
+  background: rgba(37, 99, 235, 0.1) !important;
+  border-radius: 4px;
+  padding: 0 4px !important;
+}

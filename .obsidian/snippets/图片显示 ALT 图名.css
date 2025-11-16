@@ -1,0 +1,26 @@
+/* 图片下方仅自动显示其 ALT 图名，无“图”前缀、无计数 */
+
+.markdown-preview-view .image-embed[alt]:not([alt ^="Paste"]):not([alt ^="File"]),
+.markdown-source-view .image-embed[alt]:not([alt ^="Paste"]):not([alt ^="File"]) {
+    display: inline-flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 有 alt 时，仅显示 alt 内容 */
+.markdown-preview-view .image-embed[alt]:not([alt ^="Paste"]):not([alt ^="File"])::after,
+.markdown-source-view .image-embed[alt]:not([alt ^="Paste"]):not([alt ^="File"])::after {
+    content: attr(alt);
+    display: inline-block;
+    margin-top: 0;
+    font-size: 0.7em;
+    text-align: center;
+    color: var(--text-muted);
+    user-select: text !important;
+}
+
+/* 无 alt 时，什么都不显示 */
+.markdown-preview-view .image-embed:not([alt])::after,
+.markdown-source-view .image-embed:not([alt])::after {
+    content: none;
+}

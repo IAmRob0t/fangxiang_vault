@@ -1,0 +1,21 @@
+{
+  "theme": "system",
+  "accentColor": "",
+  "cssTheme": "",
+  "showViewHeader": true,
+  "enabledCssSnippets": [
+    "obsidian",
+    "【阿岚】自定义分割线",
+    "彩虹标题",
+    "彩虹侧边栏_v2",
+    "加粗粗体样式优化",
+    "文件夹分割线",
+    "页内标题居中",
+    "图片居中"
+  ],
+  "monospaceFontFamily": "Consolas",
+  "baseFontSizeAction": false,
+  "nativeMenus": false,
+  "showRibbon": false,
+  "baseFontSize": 17
+}

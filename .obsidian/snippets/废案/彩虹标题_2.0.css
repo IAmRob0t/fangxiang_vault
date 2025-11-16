@@ -1,0 +1,93 @@
+/* 🌈 渐变彩虹标题 CSS 片段（渐变更明显版）
+   - 标题文字渐变对比度更高
+   - 保持变量管理和层级感
+*/
+
+/* === 全局变量（亮色模式） === */
+:root {
+  /* 每级标题渐变颜色（明显一些的渐变） */
+  --h2-gradient: linear-gradient(90deg, #4DA6FF, #5A50FF);  /* 亮蓝 → 深蓝紫 */
+  --h3-gradient: linear-gradient(90deg, #5A50FF, #7A46FF);  /* 深蓝紫 → 深紫 */
+  --h4-gradient: linear-gradient(90deg, #7A46FF, #A040FF);  /* 深紫 → 亮紫 */
+  --h5-gradient: linear-gradient(90deg, #A040FF, #C036FF);  /* 亮紫 → 紫红 */
+  --h6-gradient: linear-gradient(90deg, #C036FF, #E030FF);  /* 紫红 → 粉紫 */
+
+  /* 字重定义 */
+  --h2-weight: 800;
+  --h3-weight: 700;
+  --h4-weight: 600;
+  --h5-weight: 500;
+  --h6-weight: 400;
+}
+
+/* === 暗色模式下渐变可单独调整（也加大对比度） === */
+.theme-dark {
+  --h2-gradient: linear-gradient(90deg, #79C0FF, #5060FF);
+  --h3-gradient: linear-gradient(90deg, #5060FF, #6A50FF);
+  --h4-gradient: linear-gradient(90deg, #6A50FF, #9040FF);
+  --h5-gradient: linear-gradient(90deg, #9040FF, #B036FF);
+  --h6-gradient: linear-gradient(90deg, #B036FF, #D030FF);
+}
+
+/* === 渐变文字核心样式 === */
+.cm-header.cm-header-2,
+.markdown-rendered h2 {
+  background: var(--h2-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--h2-weight);
+  margin-top: 1.5em; /* 层级感 */
+}
+
+.cm-header.cm-header-3,
+.markdown-rendered h3 {
+  background: var(--h3-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--h3-weight);
+  margin-top: 1.2em;
+}
+
+.cm-header.cm-header-4,
+.markdown-rendered h4 {
+  background: var(--h4-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--h4-weight);
+  margin-top: 1em;
+}
+
+.cm-header.cm-header-5,
+.markdown-rendered h5 {
+  background: var(--h5-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--h5-weight);
+  margin-top: 0.8em;
+}
+
+.cm-header.cm-header-6,
+.markdown-rendered h6 {
+  background: var(--h6-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--h6-weight);
+  margin-top: 0.6em;
+}
+
+/* 一级标题保持默认 */
+.cm-header.cm-header-1,
+.markdown-rendered h1 {
+  /* 可按需加样式 */
+}
+
+/* 平滑过渡效果 */
+.cm-header,
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+  transition: background 0.3s ease, font-weight 0.3s ease;
+}

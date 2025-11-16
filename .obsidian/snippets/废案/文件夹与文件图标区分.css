@@ -1,0 +1,6 @@
+.nav-file-title::before { 
+  content: "";  /* 文件图标 */
+}
+.nav-folder-title::before { 
+  content: "🗂️";  /* 文件夹图标 */
+}

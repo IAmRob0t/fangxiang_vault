@@ -1,0 +1,48 @@
+/* 颜色与样式变量 */
+body {
+  --bold-color: black;
+  --bold-weight: 700; /* 默认加粗 */
+  --bold-gradient-start: rgba(77, 166, 255, 0.5); /* 蓝色起始色加深 */
+  --bold-gradient-end: rgba(179, 102, 255, 0.5); /* 浅紫色结束色加深 */
+}
+
+.theme-dark {
+  --bold-color: white;
+  --bold-gradient-start: rgba(77, 166, 255, 0.8); /* 暗模式下更深 */
+  --bold-gradient-end: rgba(179, 102, 255, 0.8); /* 暗模式下更深 */
+}
+
+/* ===== 编辑模式（CodeMirror）下的加粗样式 ===== */
+.markdown-source-view div.cm-line span.cm-strong {
+  color: var(--bold-color) !important;
+  font-weight: var(--bold-weight) !important;
+  background-image: linear-gradient(90deg, var(--bold-gradient-start), var(--bold-gradient-end));
+  background-position: 0 100%;          /* 放在文字底部 */
+  background-size: 100% 0.3em;          /* 下划线高度调粗 */
+  background-repeat: no-repeat;
+  padding-bottom: 2px;                  /* 给下划线一点空间 */
+}
+
+/* ===== 阅读模式（Markdown preview）下的加粗样式 ===== */
+.markdown-preview-view strong,
+.markdown-reading-view strong {
+  color: var(--bold-color) !important;
+  font-weight: var(--bold-weight) !important;
+  background-image: linear-gradient(90deg, var(--bold-gradient-start), var(--bold-gradient-end));
+  background-position: 0 100%;          /* 放在文字底部 */
+  background-size: 100% 0.3em;          /* 下划线高度调粗 */
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+}
+
+/* 也作用于列表项中的加粗 */
+.markdown-preview-view ul strong,
+.markdown-preview-view ol strong {
+  color: var(--bold-color) !important;
+  font-weight: var(--bold-weight) !important;
+  background-image: linear-gradient(90deg, var(--bold-gradient-start), var(--bold-gradient-end));
+  background-position: 0 100%;
+  background-size: 100% 0.3em;          /* 下划线高度调粗 */
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+}

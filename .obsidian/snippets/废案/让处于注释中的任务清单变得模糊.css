@@ -1,0 +1,13 @@
+/* 你需要做的就是，把一部分（暂时不需要在意的）任务放进两个 %% 行中间，让它们成为注释。 */
+
+/* 注释中的任务 */
+.HyperMD-list-line:not(.cm-active) .cm-comment,
+.HyperMD-task-line:not(.cm-active) .cm-comment {
+    opacity: 0.3;
+    filter: blur(2px);
+
+    &:hover{
+        opacity: 1.0;
+        filter: none;
+    }
+}

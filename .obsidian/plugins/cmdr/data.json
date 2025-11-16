@@ -1,0 +1,107 @@
+{
+  "confirmDeletion": false,
+  "showAddCommand": true,
+  "debug": false,
+  "editorMenu": [
+    {
+      "id": "graph:open-local",
+      "icon": "lucide-git-fork",
+      "name": "关系图谱: 打开局部关系图",
+      "mode": "any"
+    },
+    {
+      "id": "insert-template",
+      "icon": "lucide-copy",
+      "name": "模板: 插入模板",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-hover-editor:convert-active-pane-to-popover",
+      "icon": "lucide-arrow-down-right-from-square",
+      "name": "Hover Editor: Convert active pane to Hover Editor",
+      "mode": "any"
+    }
+  ],
+  "fileMenu": [
+    {
+      "id": "workspace:open-in-new-window",
+      "icon": "lucide-maximize",
+      "name": "在新窗口中打开当前标签页",
+      "mode": "any"
+    },
+    {
+      "id": "workspace:split-vertical",
+      "icon": "lucide-separator-vertical",
+      "name": "左右分屏",
+      "mode": "any"
+    }
+  ],
+  "leftRibbon": [
+    {
+      "id": "app:open-settings",
+      "icon": "lucide-settings",
+      "name": "打开设置",
+      "mode": "any"
+    }
+  ],
+  "rightRibbon": [],
+  "titleBar": [],
+  "statusBar": [],
+  "pageHeader": [
+    {
+      "id": "workspace:move-to-new-window",
+      "icon": "lucide-maximize",
+      "name": "将当前标签页移动至新窗口",
+      "mode": "any"
+    },
+    {
+      "id": "sticky-notes:open-sticky-note-view",
+      "icon": "sticky-note",
+      "name": "Sticky Notes: Open sticky note window",
+      "mode": "any"
+    },
+    {
+      "id": "workspaces:save",
+      "icon": "lucide-save",
+      "name": "工作区: 保存布局",
+      "mode": "any"
+    }
+  ],
+  "macros": [
+    {
+      "macro": [
+        {
+          "action": 0,
+          "commandId": "obsidian-style-settings:show-style-settings-leaf"
+        },
+        {
+          "action": 1,
+          "delay": "200"
+        },
+        {
+          "action": 0,
+          "commandId": "obsidian-hover-editor:convert-active-pane-to-popover"
+        }
+      ],
+      "name": "Style setting 悬浮",
+      "icon": "star",
+      "startup": false
+    }
+  ],
+  "explorer": [],
+  "hide": {
+    "statusbar": [],
+    "leftRibbon": []
+  },
+  "spacing": "8",
+  "advancedToolbar": {
+    "rowHeight": 48,
+    "rowCount": 1,
+    "spacing": 0,
+    "buttonWidth": 48,
+    "columnLayout": false,
+    "mappedIcons": [],
+    "tooltips": false,
+    "heightOffset": 0
+  }
+}

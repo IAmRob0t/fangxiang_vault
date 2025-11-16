@@ -1,0 +1,11 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.ext == "md"
+        - file.mtime > now() - "1 day"
+    sort:
+      - property: file.mtime
+        direction: DESC
+    rowHeight: medium

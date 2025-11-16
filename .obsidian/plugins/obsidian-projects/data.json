@@ -1,0 +1,148 @@
+{
+  "version": 2,
+  "projects": [
+    {
+      "fieldConfig": {},
+      "defaultName": "",
+      "templates": [
+        "99_Templates/Project.md"
+      ],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "tag",
+        "config": {
+          "tag": "#HAL",
+          "hierarchy": true
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {
+            "fieldConfig": {
+              "name": {
+                "width": 225
+              },
+              "deadline": {
+                "width": 158
+              },
+              "path": {
+                "hide": true
+              }
+            },
+            "orderFields": [
+              "name",
+              "deadline",
+              "tags",
+              "path"
+            ]
+          },
+          "filter": {
+            "conjunction": "and",
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": [
+              {
+                "field": "name",
+                "order": "asc",
+                "enabled": true
+              }
+            ]
+          },
+          "id": "b8cb275c-1536-4289-a732-ed5d7b4b2a08",
+          "name": "表格",
+          "type": "table"
+        },
+        {
+          "config": {
+            "columns": {
+              "未设置状态": {
+                "weight": 0,
+                "records": [
+                  "01_P/07_串口（UART）.md",
+                  "02_A/HAL库/05_GPIO 操作.md",
+                  "02_A/HAL库/06_GPIO 中断.md",
+                  "02_A/HAL库/08_I2C.md",
+                  "02_A/HAL库/09_SPI.md",
+                  "02_A/HAL库/10_定时器.md",
+                  "02_A/HAL库/11_配套模块的驱动程序开发.md"
+                ]
+              }
+            }
+          },
+          "filter": {
+            "conjunction": "and",
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "98545cbf-dcaa-4b54-a6bb-952c69fd6aa9",
+          "name": "看板",
+          "type": "board"
+        }
+      ],
+      "id": "300becdf-1f9c-4c34-a069-7972f0dc2808",
+      "name": "Projects"
+    },
+    {
+      "fieldConfig": {},
+      "defaultName": "",
+      "templates": [
+        "99_Templates/Project.md"
+      ],
+      "excludedNotes": [],
+      "isDefault": true,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "01_P",
+          "recursive": true
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {
+            "interval": "month"
+          },
+          "filter": {
+            "conjunction": "and",
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "d2fabe2e-f53a-46f5-bc73-c40c2a58ce59",
+          "name": "日历",
+          "type": "calendar"
+        }
+      ],
+      "id": "26509e46-7c14-4ddf-8418-a56ca5634679",
+      "name": "Ongoing Projects"
+    }
+  ],
+  "archives": [],
+  "preferences": {
+    "projectSizeLimit": 100,
+    "frontmatter": {
+      "quoteStrings": "PLAIN"
+    },
+    "locale": {
+      "firstDayOfWeek": "monday"
+    },
+    "commands": [],
+    "linkBehavior": "open-note"
+  }
+}
