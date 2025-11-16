@@ -20,7 +20,7 @@ tags:
 
 访问 IO 设备需要使用专门的指令（如 `in` / `out`），而访问内存则使用常规的内存访问指令。
 
-![[attachments/04_地址空间、RISC 与 CISC 架构解析/0402_x86 架构的隔离 IO.png|745]]
+![[attachments/04_地址空间、RISC 与 CISC 架构解析/0402_x86 架构的隔离 IO.png]]
 
 # RISC (精简指令集计算机)
 
