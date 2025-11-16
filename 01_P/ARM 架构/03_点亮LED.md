@@ -215,7 +215,7 @@ Val = *p;							// 读寄存器
 
 设置栈，调用 `main` 函数：
 
-![[attachments/03_点亮LED/0306_start.s.png|542]]
+![[attachments/03_点亮LED/0306_start.s.png]]
 
 # 七、程序启动时的内存操作
 
