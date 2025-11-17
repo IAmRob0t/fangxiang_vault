@@ -17,47 +17,47 @@ VisUAL模拟的ARM板子如下图所示，
 红色区域是ROM，不能读不能写，只能运行其中的程序；
 ROM区域本来可以读的，这是VisUAL的局限；
 RAM区域可读可写。
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片1的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304757.png)
 
 ---
 
 注意：右图中的DCD、FILL、END等是ARM汇编器语法
 GCC汇编语法稍有不同，后面会介绍。
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片2的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304760.png)
 
 ---
 
 基本不需要设置，我也就设置字体大小而已：设置大小后，必须回车才其效果
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片3的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304761.png)
 
 ---
 
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片4的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304762.png)
 
 ---
 
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片5的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304762%201.png)
 
 ---
 
 点击“Reset”后修改为：
 MOV R0, #0x20000
 MOV R1, #0x1234
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片6的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304763.png)
 
 ---
 
 点击“Reset”后，才能修改：
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/点击Reset后才能修改.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304764%201.png)
 
 ---
 
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片8的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304763%201.png)
 
 ---
 
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片9的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304764.png)
 
 ---
 
-![图片描述](attachments/04_ARM汇编模拟器VisUAL/幻灯片10的图片1.png)
+![图片描述](attachments/04_ARM汇编模拟器VisUAL/file-20251117214304755.png)
