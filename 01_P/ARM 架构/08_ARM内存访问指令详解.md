@@ -33,7 +33,7 @@ LDR 指令用于将内存中的数据加载到指定的通用寄存器中。
         *   `SH`: 有符号半字 (Sign extend to 32 bits)。
         *   省略 `type` 则表示加载一个字 (Word)。
 
-![LDR指令语法](attachments/05_内存访问指令/LDR指令语法.png)
+![file-20251117232505789 1](attachments/08_ARM内存访问指令详解/file-20251117232505789%201.png)
 
 ### 2.2 STR (Store Register) - 将寄存器数据存储到内存
 
@@ -48,7 +48,7 @@ STR 指令用于将指定通用寄存器中的数据存储到内存中。
         *   `H`: 存储一个半字。
         *   省略 `type` 则表示存储一个字。
 
-![STR指令语法](attachments/05_内存访问指令/STR指令语法.png)
+![file-20251117232505790](attachments/08_ARM内存访问指令详解/file-20251117232505790.png)
 
 ### 2.3 寻址模式与特殊后缀
 
@@ -98,7 +98,7 @@ LDM 指令用于将内存中的多个字数据加载到指定的寄存器列表�
     *   `reglist`: 用花括号 `{}` 括起来的寄存器列表，例如 `{R0-R3, R5}`。
     *   `addr_mode`: 寻址模式，控制内存地址的增减方式。
 
-![LDM指令语法](attachments/05_内存访问指令/LDM指令语法.png)
+![file-20251117232505789](attachments/08_ARM内存访问指令详解/file-20251117232505789.png)
 
 ### 3.2 STM (Store Multiple Register) - 将多个寄存器数据存储到内存
 
@@ -109,7 +109,7 @@ STM 指令用于将指定寄存器列表中的多个字数据存储到内存中�
     *   `reglist`: 用花括号 `{}` 括起来的寄存器列表。
     *   `addr_mode`: 寻址模式，控制内存地址的增减方式。
 
-![STM指令语法](attachments/05_内存访问指令/STM指令语法.png)
+![file-20251117232505787 1](attachments/08_ARM内存访问指令详解/file-20251117232505787%201.png)
 
 ### 3.3 寻址模式 (addr_mode) 详解
 
@@ -140,7 +140,7 @@ STMIA	R0!, {R1-R3}            ; R1, R2, R3 分别存入 R0, R0+4, R0+8 地址处
                                 ; R0 更新为 R0 + 3*4 = 0x20010 + 0xC = 0x2001C
 ```
 
-![STMIA多寄存器存取示例](attachments/05_内存访问指令/STMIA多寄存器存取示例.png)
+![file-20251117232505787](attachments/08_ARM内存访问指令详解/file-20251117232505787.png)
 
 ---
 
@@ -179,7 +179,7 @@ STMFD sp!, {r0-r5} ; Push onto a Full Descending Stack (将r0-r5压入栈)
 LDMFD sp!, {r0-r5} ; Pop from a Full Descending Stack (将栈顶数据弹出到r0-r5)
 ```
 
-![STMFD与LDMFD栈操作示例](attachments/05_内存访问指令/STMFD与LDMFD栈操作示例.png)
+![file-20251117232505786](attachments/08_ARM内存访问指令详解/file-20251117232505786.png)
 
 ---
 
