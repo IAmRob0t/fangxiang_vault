@@ -21,8 +21,7 @@ def generate_image_hash(image_path):
 def sanitize_filename(name):
     """Removes invalid characters from a filename."""
     # Remove newlines and other problematic whitespace first
-    name = name.replace('
-', ' ').replace('', '')
+    name = name.replace('\n', ' ').replace('\r', '')
     # Then remove other invalid characters
     return re.sub(r'[^\w\s\u4e00-\u9fa5.-]', '', name).strip()
 
