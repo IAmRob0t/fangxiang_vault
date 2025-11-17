@@ -21,7 +21,7 @@ tags:
 
 > **一句话总结**：寄存器是 CPU 内部的、数量极少但速度飞快的“临时存储区”。CPU 对数据的所有“处理”都在寄存器上进行，而不是直接在内存里。
 
-![RISC架构下CPU与内存的交互](attachments/05_ARM内部寄存器/RISC架构下CPU与内存的交互.png)
+![RISC架构下CPU与内存的交互](attachments/ARM寄存器入门：CPU的工作台/RISC架构下CPU与内存的交互.png)
 
 ---
 
@@ -31,7 +31,7 @@ tags:
 
 为了方便理解，我们可以把它们分成三类：
 
-![ARM通用寄存器组R0-R15](attachments/05_ARM内部寄存器/ARM通用寄存器组R0-R15.png)
+![ARM通用寄存器组R0-R15](attachments/ARM寄存器入门：CPU的工作台/ARM通用寄存器组R0-R15.png)
 
 ### 第一类：通用寄存器 (R0 - R12)
 
