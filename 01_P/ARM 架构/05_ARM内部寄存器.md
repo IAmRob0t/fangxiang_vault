@@ -1,8 +1,8 @@
 ---
 tags:
-  - arm
   - 寄存器
   - CPU
+  - arm
 ---
 
 # RISC 指令集与寄存器需求
