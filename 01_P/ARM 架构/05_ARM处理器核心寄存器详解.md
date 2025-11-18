@@ -51,7 +51,11 @@ ARM 处理器有一组非常重要的通用寄存器，编号从 R0 到 R15。
 
 ![](attachments/05_ARM处理器核心寄存器详解/CortexM3M4程序状态寄存器xPSR.png)
 
+- **SP_main (主栈指针)**：主要用于操作系统内核和异常处理程序。
+- **SP_process (进程栈指针)**：主要用于用户应用程序代码。
+
 xPSR 实际上是三个独立寄存器的组合视图：
+
 - **APSR** (Application PSR)：应用状态寄存器，保存算术和逻辑运算的状态标志（如零标志 Z、进位标志 C）。
 - **IPSR** (Interrupt PSR)：中断状态寄存器，记录当前正在处理的中断号。
 - **EPSR** (Execution PSR)：执行状态寄存器，包含一些控制 CPU 执行状态的位。
