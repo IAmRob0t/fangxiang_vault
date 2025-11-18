@@ -152,6 +152,7 @@ tags:
 **ADR 伪指令**
 
 `ADR`（Address）伪指令用于获取一个标号（label）的地址，它通常被编译器转换为一条基于PC的加法或减法指令。
+
 `ADR R0, Loop`
 
 ![](attachments/06_ARM汇编/ADR指令语法.png)
