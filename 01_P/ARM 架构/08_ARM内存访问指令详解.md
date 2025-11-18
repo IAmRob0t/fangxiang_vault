@@ -23,15 +23,15 @@ LDR 和 STR 指令用于在寄存器和内存之间传输单个字（Word）、�
 LDR 指令用于将内存中的数据加载到指定的通用寄存器中。
 
 *   **语法**: `LDR{type}{cond} Rt, [Rn {, #offset}]`
-    *   `Rt`: 目标寄存器，数据将加载到此寄存器。
-    *   `Rn`: 基址寄存器，包含内存地址的基址。
-    *   `#offset`: 可选的偏移量，用于计算最终的内存地址。
     *   `type`: 指定加载数据的大小和符号扩展方式。
         *   `B`: 无符号字节 (Zero extend to 32 bits on loads)。
         *   `H`: 无符号半字 (Zero extend to 32 bits on loads)。
         *   `SB`: 有符号字节 (Sign extend to 32 bits)。
         *   `SH`: 有符号半字 (Sign extend to 32 bits)。
         *   省略 `type` 则表示加载一个字 (Word)。
+    *   `Rt`: 目标寄存器，数据将加载到此寄存器。
+    *   `Rn`: 基址寄存器，包含内存地址的基址。
+    *   `#offset`: 可选的偏移量，用于计算最终的内存地址。
 
 ![](attachments/08_ARM内存访问指令详解/file-20251117233850484.png)
 
