@@ -99,11 +99,17 @@ VisUAL 提供了多种执行方式，最常用的是：
 
 VisUAL 同样支持带有条件的指令。例如，下面的代码比较 `R1` 和 `R2` 的大小，并根据结果将较大的值存入 `R0` 指向的内存地址。
 
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251117222703052.png)
+
 - `CMP R1, R2`: 比较 `R1` 和 `R2`，结果影响 `CPSR` 状态寄存器。
 - `STRLE R1, [R0]`: 如果 `R1 <= R2` (LE: Less or Equal)，则执行存储。
 - `STRGT R2, [R0]`: 如果 `R1 > R2` (GT: Greater Than)，则执行存储。
 
-![](attachments/07_VisUAL%20模拟器入门教程/file-20251117222703052.png)
+其中：
+*   `STR` 是 **ST**o**R**e（存储）的缩写。
+*   `LE` 是 **L**ess than or **E**qual to（小于或等于）的缩写。
+*   `GT` 是 **G**reater **T**han（大于）的缩写。
+
 
 ---
 
