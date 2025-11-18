@@ -12,7 +12,7 @@ tags:
 
 ![[03_点亮LED#ARM中怎么访问寄存器？就像访问内存一样]]
 
-![[attachments/04_地址空间、RISC 与 CISC 架构解析/0401_存储器映射与设备访问示意图.png]]
+![[attachments/04_地址空间、RISC与CISC架构解析/file-20251118103302124.png]]
 
 ## X86 架构：独立 IO 空间
 
@@ -20,7 +20,7 @@ tags:
 
 访问 IO 设备需要使用专门的指令（如 `in` / `out`），而访问内存则使用常规的内存访问指令。
 
-![[attachments/04_地址空间、RISC 与 CISC 架构解析/0402_x86 架构的隔离 IO.png]]
+![[attachments/04_地址空间、RISC与CISC架构解析/file-20251118103302127.png]]
 
 # RISC (精简指令集计算机)
 
