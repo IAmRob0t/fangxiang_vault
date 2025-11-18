@@ -68,7 +68,7 @@ LDR 和 STR 指令支持多种寻址模式，以及一些特殊后缀来控制�
 *   **`!` (写回)**: 表示修改后的 `Rn` 值会写入 `Rn` 寄存器。
     *   例如：`STR R2, [R0, #8]!` (R2 的值存到 R0+8 所示地址, 并且 R0 = R0+8)
     *   如果没有 `!`, 指令执行完后 `Rn` 恢复/保持原值。
-*   **`^` (CPSR)**: 会影响 `CPSR` (Current Program Status Register)，通常在讲异常处理时会详细说明。
+*   **`^` (CPSR)**: 会影响 `CPSR` (Current Program Status Register)，在讲异常处理时再详细说明。
 
 ## 2.4 单寄存器内存访问示例
 
