@@ -63,8 +63,6 @@ xPSR 实际上是三个独立寄存器的组合视图：
 ![](attachments/05_ARM处理器核心寄存器详解/xPSR的三个子寄存器.png)
 
 我们可以通过 `MRS` 和 `MSR` 指令来读写这些状态寄存器。
-*   **MRS (Move from Register to Status)**：用于将特殊功能寄存器（如程序状态寄存器 PSR）的内容读取到通用寄存器中。
-*   **MSR (Move from Status to Register)**：用于将通用寄存器的内容写入到特殊功能寄存器中。
 
 ![](attachments/05_ARM处理器核心寄存器详解/访问xPSR的指令.png)
 
