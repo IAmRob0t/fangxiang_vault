@@ -1,96 +1,86 @@
----
-tags:
-  - 02_ARM内部寄存器
-  - Instruction
-  - RISC
-  - Reduced
----
-ARM芯片属于精简指令集计算机(RISC：Reduced Instruction Set Computing)，它所用的指令比较简单，有如下特点：
-① 对内存只有读、写指令
-② 对于数据的运算是在CPU内部实现
-③ 使用RISC指令的CPU复杂度小一点，易于设计
 
-对于左图所示的乘法运算a = a * b，
-在RISC中要使用4条汇编指令：
-① 读内存a
-② 读内存b
-③ 计算a*b
-④ 把结果写入内存
+# ARM处理器核心寄存器详解
 
-```mermaid
-graph LR
-    %% 节点定义
-    A[CPU <br> ③ c = a * b];
-    M[内存];
-    
-    %% 强制布局
-    A ~~~ M;
+## 1. ARM 架构与寄存器概述
 
-    %% 箭头连接
-    M -- "① 读 a (Load)" --> A;
-    M -- "② 读 b (Load)" --> A;
-    A -- "④ 写 c (Store)" --> M;
-```
+### 什么是 RISC？
 
+ARM 芯片是一种**精简指令集计算机 (RISC)**。可以通俗地理解为，它只执行一些最核心、最简单的指令，这使得 CPU 的设计可以更简单、更高效。
 
----
+其主要特点包括：
+- **内存访问限制**：只有 `Load`（加载）和 `Store`（存储）指令可以直接访问内存。
+- **数据运算在 CPU 内部**：所有的数据计算（如加减乘除）都在 CPU 的寄存器中完成，不能直接对内存中的数据进行运算。
 
-无论是cortex-M3/M4，
-还是cortex-A7，
-CPU内部都有R0、R1、……、R15寄存器；
-它们可以用来“暂存”数据。
+举个例子，执行 `a = a * b` 这个操作，RISC 架构需要四步：
+1.  `Load`：从内存读取 a 到 CPU 的一个寄存器（如 R0）。
+2.  `Load`：从内存读取 b 到 CPU 的另一个寄存器（如 R1）。
+3.  `MUL`：在 CPU 内部，计算 R0 * R1，结果存到 R0。
+4.  `Store`：将寄存器 R0 的结果写回内存中的 a。
 
-对于R13、R14、R15，还另有用途：
-R13：别名SP(Stack Pointer)，栈指针
-R14：别名LR(Link Register)，用来保存返回地址
-R15：别名PC(Program Counter)，程序计数器，
-         表示当前指令地址，写入新值即可跳转
-![](./attachments/02_ARM内部寄存器/无论是cortex-M3M4，_1.png)
+这个过程中，CPU 内部需要一些空间来临时存放从内存读出来的数据和运算结果，这个“临时空间”就是**寄存器**。
 
----
+### 寄存器的作用：CPU的数据暂存单元
 
-cortex-M3/M4：
-作为对比，cortex-A7也是类似的：
-![](./attachments/02_ARM内部寄存器/cortex-M3M4：_2.png)
-![](./attachments/02_ARM内部寄存器/cortex-M3M4：_3.png)
+可以把寄存器想象成 CPU 身边的小黑板，速度极快。CPU 在处理数据时，会先把需要的数据从内存（相当于一个大仓库）搬到这个小黑板上，计算完成后再把结果写回内存。
 
----
+## 2. 通用寄存器
 
-cortex-A7：
-![](./attachments/02_ARM内部寄存器/cortex-M3M4：_3.png)
-![](./attachments/02_ARM内部寄存器/cortex-A7：_4.png)
+ARM 处理器有一组非常重要的通用寄存器，编号从 R0 到 R15。
 
----
+![](./attachments/02_ARM内部寄存器/ARM通用寄存器R0-R15.png)
 
-对于cortex-M3/M4，
-还要一个Program Status Register
-![](./attachments/02_ARM内部寄存器/对于cortex-M3M4，_5.png)
+其中，大多数寄存器是“通用的”，但有几个有特殊职责：
 
----
+- **R0-R12**：是真正的“通用”寄存器，可以随意用来存取数据。
+- **R13 (SP)**：**栈指针 (Stack Pointer)**。它始终指向当前程序栈的顶部，用于管理函数的调用和局部变量。
+- **R14 (LR)**：**链接寄存器 (Link Register)**。当一个函数被调用时，它负责保存返回地址，以便函数执行完毕后能正确地回到原来的地方。
+- **R15 (PC)**：**程序计数器 (Program Counter)**。它存放着下一条即将执行指令的内存地址。改变 PC 的值，就可以实现程序的跳转。
 
-对于cortex-M3/M4来说，
-xPSR实际上对应3个寄存器：
-① APSR：Application PSR，应用PSR
-② IPSR：Interrupt PSR，中断PSR
-③ EPSR：Exectution PSR，执行PSR
-这3个寄存器的含义如右图所示
+## 3. 程序状态寄存器 (PSR)
 
-这3个寄存器，可以单独访问：
-MRS  R0, APSR  ;读APSR
-MRS  R0, IPSR    ;读IPSR
-MSR  APSR, R0   ;写APSR
+除了通用寄存器，ARM 还有一个特殊的状态寄存器，它记录了当前 CPU 的各种状态，例如运算结果是正数、负数还是零，以及 CPU 当前的工作模式等。
 
-这3个寄存器，也可以一次性访问：
-MRS  R0,  PSR  ; 读组合程序状态
-MSR  PSR, R0   ; 写组合程序状态
-所谓组合程序状态，入下图所示：
-![](./attachments/02_ARM内部寄存器/对于cortex-M3M4来说，_6.png)
-![](./attachments/02_ARM内部寄存器/对于cortex-M3M4来说，_7.png)
-![](./attachments/02_ARM内部寄存器/对于cortex-M3M4来说，_8.png)
+### Cortex-M3/M4 架构下的 xPSR
 
----
+在 Cortex-M3/M4 系列中，程序状态寄存器被称为 **xPSR**。
 
-对于cortex-A7，
-还要一个Current Program Status Register
-![](./attachments/02_ARM内部寄存器/对于cortex-A7，_9.png)
-![](./attachments/02_ARM内部寄存器/对于cortex-A7，_10.png)
+![](./attachments/02_ARM内部寄存器/CortexM3M4程序状态寄存器xPSR.png)
+
+xPSR 实际上是三个独立寄存器的组合视图：
+- **APSR** (Application PSR)：应用状态寄存器，保存算术和逻辑运算的状态标志（如零标志 Z、进位标志 C）。
+- **IPSR** (Interrupt PSR)：中断状态寄存器，记录当前正在处理的中断号。
+- **EPSR** (Execution PSR)：执行状态寄存器，包含一些控制 CPU 执行状态的位。
+
+![](./attachments/02_ARM内部寄存器/xPSR的三个子寄存器.png)
+
+我们可以通过 `MRS` 和 `MSR` 指令来读写这些状态寄存器。
+
+![](./attachments/02_ARM内部寄存器/访问xPSR的指令.png)
+
+这三个寄存器也可以被看作一个整体，即组合程序状态 (Combined Program Status)。
+
+![](./attachments/02_ARM内部寄存器/xPSR的组合状态视图.png)
+
+### Cortex-A7 架构下的 CPSR
+
+在更强大的 Cortex-A 系列（如 A7）中，这个状态寄存器被称为 **CPSR (Current Program Status Register)**。
+
+![](./attachments/02_ARM内部寄存器/CortexA7当前程序状态寄存器CPSR.png)
+
+它的功能更全面，除了包含运算状态，还定义了处理器的工作模式（用户模式、系统模式、中断模式等）和中断使能状态。
+
+![](./attachments/02_ARM内部寄存器/CPSR的详细位域.png)
+
+## 4. 不同架构寄存器组对比
+
+虽然基本原理相通，但不同系列的 ARM 处理器在寄存器组合上略有差异。
+
+- **Cortex-M3/M4 寄存器视图**
+  ![](./attachments/02_ARM内部寄存器/CortexM3M4寄存器组概览.png)
+
+- **Cortex-A7 寄存器视图**
+  ![](./attachments/02_ARM内部寄存器/CortexA7寄存器组概览.png)
+
+通过下图可以更直观地看到两者在寄存器组织上的区别。
+
+![](./attachments/02_ARM内部寄存器/CortexM3M4与CortexA7寄存器对比.png)
