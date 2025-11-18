@@ -55,9 +55,12 @@ ARM 的数据处理指令遵循一个通用的语法格式，这使得指令集�
 
 `{cond}` 决定了指令是否执行，它依赖于 APSR 中标志位的当前状态。
 
+![](attachments/09_ARM数据处理指令详解/Table5-1ConditionCodeSuffixes.png)
+
+## 2.3 更新标志位后缀 `{S}`
+
 ![](attachments/09_ARM数据处理指令详解/file-20251118002142953.png)
 
-![](attachments/09_ARM数据处理指令详解/file-20251118002142955.png)
 
 ---
 
