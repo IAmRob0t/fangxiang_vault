@@ -16,19 +16,22 @@ ARM芯片属于精简指令集计算机(RISC：Reduced Instruction Set Computing
 ② 读内存b
 ③ 计算a*b
 ④ 把结果写入内存
-![](./attachments/02_ARM内部寄存器/ARM芯片属于精简指令集计算机(RISC：Reduced Instruction Set Compu_0.png)
 
----
+```mermaid
+graph LR
+    %% 节点定义
+    A[CPU <br> ③ c = a * b];
+    M[内存];
+    
+    %% 强制布局
+    A ~~~ M;
 
-对于左图所示的乘法运算a = a * b，
-在RISC中要使用4条汇编指令：
-① 读内存a
-② 读内存b
-③ 计算a*b
-④ 把结果写入内存
-问题：
-在CPU内部，用什么来保存a、b、a*b ？
-![](./attachments/02_ARM内部寄存器/ARM芯片属于精简指令集计算机(RISC：Reduced Instruction Set Compu_0.png)
+    %% 箭头连接
+    M -- "① 读 a (Load)" --> A;
+    M -- "② 读 b (Load)" --> A;
+    A -- "④ 写 c (Store)" --> M;
+```
+
 
 ---
 
