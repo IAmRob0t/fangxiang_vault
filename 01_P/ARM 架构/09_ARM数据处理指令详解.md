@@ -57,13 +57,6 @@ ARM 的数据处理指令遵循一个通用的语法格式，这使得指令集�
 
 ![](attachments/09_ARM数据处理指令详解/Table5-1ConditionCodeSuffixes.png)
 
-## 2.3 更新标志位后缀 `{S}`
-
-![](attachments/09_ARM数据处理指令详解/file-20251118002142953.png)
-
-
----
-
 # 3. 常用数据处理指令
 
 下面列出了一些核心的数据处理指令，它们是汇编编程中最常用的工具。
@@ -118,7 +111,14 @@ TST  R0, #0x10          ; 测试 R0 的第 4 位是否为 1
 
 ---
 
-# 4. 参考资料
+# 4. 程序状态寄存器中的位域
+
+![](attachments/09_ARM数据处理指令详解/程序状态寄存器中的位域.png)
+
+
+---
+
+# 5. 参考资料
 
 *   《DEN0013D_cortex_a_series_PG.pdf》P70
 *   《ARM Cortex-M3与Cortex-M4权威指南.pdf》第5章
