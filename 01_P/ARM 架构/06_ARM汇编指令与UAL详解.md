@@ -35,7 +35,7 @@ tags:
 *   `ADR/LDR`：地址加载
 *   `CMP`：比较
 
-![](attachments/06_ARM汇编/ARM指令集概览.png)
+![](attachments/06_ARM汇编指令与UAL详解/ARM指令集概览.png)
 
 ---
 
@@ -45,7 +45,7 @@ tags:
 
 如果希望深入学习，可以参考《ARM Cortex-M3与Cortex-M4权威指南.pdf》。
 
-![](attachments/06_ARM汇编/第五章指令集内容概览.png)
+![](attachments/06_ARM汇编指令与UAL详解/第五章指令集内容概览.png)
 
 ---
 
@@ -55,7 +55,7 @@ tags:
 
 其统一汇编语言（UAL）格式通常如下：
 
-![](attachments/06_ARM汇编/ARM通用指令格式.png)
+![](attachments/06_ARM汇编指令与UAL详解/ARM通用指令格式.png)
 
 *   `Operation`：指令助记符，如`ADD`、`MOV`。
 *   `{cond}`：条件码，指令仅在满足特定条件时执行。
@@ -63,7 +63,7 @@ tags:
 *   `Rd`：目标寄存器，用于存储运算结果。
 *   `Rn`, `Operand2`：源操作数。
 
-![](attachments/06_ARM汇编/ARM指令集分类.png)
+![](attachments/06_ARM汇编指令与UAL详解/ARM指令集分类.png)
 
 ---
 
@@ -71,13 +71,13 @@ tags:
 
 数据处理指令用于执行算术和逻辑运算。
 
-![](attachments/06_ARM汇编/数据处理指令.png)
+![](attachments/06_ARM汇编指令与UAL详解/数据处理指令.png)
 
 **条件码后缀**
 
 大多数ARM指令都可以带条件码执行，这使得代码更高效，避免了不必要的跳转。
 
-![](attachments/06_ARM汇编/条件码后缀.png)
+![](attachments/06_ARM汇编指令与UAL详解/条件码后缀.png)
 
 ---
 
@@ -91,16 +91,16 @@ tags:
 *   **STM (Store Multiple Registers)**：将多个寄存器的数据存储到内存。
 
 **LDR 指令语法**
-![](attachments/06_ARM汇编/LDR指令语法.png)
+![](attachments/06_ARM汇编指令与UAL详解/LDR指令语法.png)
 
 **STR 指令语法**
-![](attachments/06_ARM汇编/STR指令语法.png)
+![](attachments/06_ARM汇编指令与UAL详解/STR指令语法.png)
 
 **LDM 指令语法**
-![](attachments/06_ARM汇编/LDM指令语法.png)
+![](attachments/06_ARM汇编指令与UAL详解/LDM指令语法.png)
 
 **STM 指令语法**
-![](attachments/06_ARM汇编/STM指令语法.png)
+![](attachments/06_ARM汇编指令与UAL详解/STM指令语法.png)
 
 **地址模式 (addr_mode)**
 *   `IA` (Increment After)：传输后增加地址（默认）。
@@ -118,13 +118,13 @@ tags:
 跳转指令用于改变程序的执行流程。
 
 *   **B (Branch)**：直接跳转到指定地址。
-    ![](attachments/06_ARM汇编/B指令语法.png)
+    ![](attachments/06_ARM汇编指令与UAL详解/B指令语法.png)
 *   **BL (Branch with Link)**：在跳转前，将返回地址（下一条指令的地址）保存到链接寄存器（LR）中，常用于函数调用。
-    ![](attachments/06_ARM汇编/BL指令语法.png)
+    ![](attachments/06_ARM汇编指令与UAL详解/BL指令语法.png)
 *   **BX (Branch and eXchange)**：跳转并根据目标地址的最低位切换处理器状态（0=ARM, 1=Thumb）。
-    ![](attachments/06_ARM汇编/BX指令语法.png)
+    ![](attachments/06_ARM汇编指令与UAL详解/BX指令语法.png)
 *   **BLX (Branch with Link and eXchange)**：带返回的跳转并切换状态。
-    ![](attachments/06_ARM汇编/BLX指令语法.png)
+    ![](attachments/06_ARM汇编指令与UAL详解/BLX指令语法.png)
 
 ---
 
@@ -136,7 +136,7 @@ tags:
 
 立即数通常是由一个8位数通过偶数位循环移位得到的32位数。
 
-![](attachments/06_ARM汇编/立即数定义.png)
+![](attachments/06_ARM汇编指令与UAL详解/立即数定义.png)
 
 **LDR 伪指令**
 
@@ -154,7 +154,7 @@ tags:
 `ADR`（Address）伪指令用于获取一个标号（label）的地址，它通常被编译器转换为一条基于PC的加法或减法指令。
 - **标号（Label）** 在汇编语言中是一个符号名称，用于标记内存中的特定位置（通常是指令或数据地址）。它充当地址的占位符，使程序员可以通过名称而非绝对数值地址来引用位置，从而提高代码的可读性和可维护性。汇编器在汇编过程中会将这些标号解析为实际的内存地址。
 
-![](attachments/06_ARM汇编/ADR指令语法.png)
+![](attachments/06_ARM汇编指令与UAL详解/ADR指令语法.png)
 
 `ADR R0, Loop`
 - 在汇编语言中，`Loop` 通常是一个**标号（Label）**，它标记了代码中的一个特定位置，通常是循环的起始点或一个需要反复跳转到的位置。它是一个符号化的地址，`ADR` 伪指令（或其他跳转指令）可以引用它。
@@ -165,4 +165,4 @@ tags:
 
 不同的汇编器（如GNU Assembler和armasm）在语法上存在一些差异。下表列出了一些常见的区别：
 
-![](attachments/06_ARM汇编/GNU汇编器与armasm语法比较.png)
+![](attachments/06_ARM汇编指令与UAL详解/GNU汇编器与armasm语法比较.png)
