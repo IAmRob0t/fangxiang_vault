@@ -93,8 +93,6 @@ VisUAL 提供了多种执行方式，最常用的是：
 2.  在弹出的 `View Memory Contents` 窗口中，输入起始地址 `0x20000`。
 3.  可以看到地址 `0x20000` 处的值已经变成了 `0x1234`，验证成功。
 
-![](attachments/07_VisUAL%20模拟器入门教程/file-20251117222703052.png)
-
 ---
 
 # 5. 进阶示例：条件执行
@@ -105,7 +103,7 @@ VisUAL 同样支持带有条件的指令。例如，下面的代码比较 `R1` �
 - `STRLE R1, [R0]`: 如果 `R1 <= R2` (LE: Less or Equal)，则执行存储。
 - `STRGT R2, [R0]`: 如果 `R1 > R2` (GT: Greater Than)，则执行存储。
 
-
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251117222703052.png)
 
 ---
 
