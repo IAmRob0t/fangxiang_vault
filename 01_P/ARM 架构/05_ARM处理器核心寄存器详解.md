@@ -1,3 +1,10 @@
+---
+tags:
+  - ARM
+  - 寄存器
+  - Cortex-M
+  - Cortex-A
+---
 
 # 1. ARM 架构与寄存器概述
 
@@ -25,7 +32,7 @@ ARM 芯片是一种**精简指令集计算机 (RISC)**。可以通俗地理解�
 
 ARM 处理器有一组非常重要的通用寄存器，编号从 R0 到 R15。
 
-![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807146%201.png)
+![](attachments/05_ARM处理器核心寄存器详解/ARM通用寄存器R0-R15.png)
 
 其中，大多数寄存器是“通用的”，但有几个有特殊职责：
 
@@ -42,43 +49,43 @@ ARM 处理器有一组非常重要的通用寄存器，编号从 R0 到 R15。
 
 在 Cortex-M3/M4 系列中，程序状态寄存器被称为 **xPSR**。
 
-![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807144.png)
+![](attachments/05_ARM处理器核心寄存器详解/CortexM3M4程序状态寄存器xPSR.png)
 
 xPSR 实际上是三个独立寄存器的组合视图：
 - **APSR** (Application PSR)：应用状态寄存器，保存算术和逻辑运算的状态标志（如零标志 Z、进位标志 C）。
 - **IPSR** (Interrupt PSR)：中断状态寄存器，记录当前正在处理的中断号。
 - **EPSR** (Execution PSR)：执行状态寄存器，包含一些控制 CPU 执行状态的位。
 
-![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807143.png)
+![](attachments/05_ARM处理器核心寄存器详解/xPSR的三个子寄存器.png)
 
 我们可以通过 `MRS` 和 `MSR` 指令来读写这些状态寄存器。
 
-![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807140.png)
+![](attachments/05_ARM处理器核心寄存器详解/访问xPSR的指令.png)
 
 这三个寄存器也可以被看作一个整体，即组合程序状态 (Combined Program Status)。
 
-![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807141.png)
+![](attachments/05_ARM处理器核心寄存器详解/xPSR的组合状态视图.png)
 
 ## Cortex-A7 架构下的 CPSR
 
 在更强大的 Cortex-A 系列（如 A7）中，这个状态寄存器被称为 **CPSR (Current Program Status Register)**。
 
-![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807139.png)
+![](attachments/05_ARM处理器核心寄存器详解/CortexA7当前程序状态寄存器CPSR.png)
 
 它的功能更全面，除了包含运算状态，还定义了处理器的工作模式（用户模式、系统模式、中断模式等）和中断使能状态。
 
-![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807137.png)
+![](attachments/05_ARM处理器核心寄存器详解/CPSR的详细位域.png)
 
 # 4. 不同架构寄存器组对比
 
 虽然基本原理相通，但不同系列的 ARM 处理器在寄存器组合上略有差异。
 
 - **Cortex-M3/M4 寄存器视图**
-  ![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807146.png)
+  ![](attachments/05_ARM处理器核心寄存器详解/CortexM3M4寄存器组概览.png)
 
 - **Cortex-A7 寄存器视图**
-  ![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807145.png)
+  ![](attachments/05_ARM处理器核心寄存器详解/CortexA7寄存器组概览.png)
 
 通过下图可以更直观地看到两者在寄存器组织上的区别。
 
-![](attachments/05_ARM处理器核心寄存器详解/file-20251118102807145%201.png)
+![](attachments/05_ARM处理器核心寄存器详解/CortexM3M4与CortexA7寄存器对比.png)
