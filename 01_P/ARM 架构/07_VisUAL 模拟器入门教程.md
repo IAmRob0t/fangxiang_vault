@@ -17,6 +17,8 @@ VisUAL 是一款轻量级的 ARM 汇编模拟器，非常适合学习和测试 A
     - **下载地址**: [https://salmanarif.bitbucket.io/visual/downloads.html](https://salmanarif.bitbucket.io/visual/downloads.html)
     - **使用指南**: [https://salmanarif.bitbucket.io/visual/user_guide/index.html](https://salmanarif.bitbucket.io/visual/user_guide/index.html)
 
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251117222703048.png)
+
 ![](attachments/07_VisUAL%20模拟器入门教程/file-20251117222703055%202.png)
 
 ---
@@ -104,7 +106,7 @@ VisUAL 同样支持带有条件的指令。例如，下面的代码比较 `R1` �
 - `STRLE R1, [R0]`: 如果 `R1 <= R2` (LE: Less or Equal)，则执行存储。
 - `STRGT R2, [R0]`: 如果 `R1 > R2` (GT: Greater Than)，则执行存储。
 
-![](attachments/07_VisUAL%20模拟器入门教程/file-20251117222703048.png)
+
 
 ---
 
