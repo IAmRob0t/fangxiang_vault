@@ -9,7 +9,7 @@ tags:
 
 ---
 
-# 📹 N8N 自动化全套教程笔记 (李哈利 Harry)
+#  N8N 自动化全套教程笔记 (李哈利 Harry)
 
 视频链接: https://www.youtube.com/watch?v=JnepOnstpAQ
 
@@ -17,7 +17,7 @@ tags:
 
 核心目标: 从零基础到精通，构建企业级或个人级的AI自动化工作流（Agent）。
 
-## 📑 1. 课程简介与目标 [[00:00](http://www.youtube.com/watch?v=JnepOnstpAQ&t=0)]
+##  1. 课程简介与目标 [[00:00](http://www.youtube.com/watch?v=JnepOnstpAQ&t=0)]
 
 - **适用人群**: 新手小白（无代码基础）、想通过AI增效降本的中小企业主、希望从事AI自动化服务的自由职业者。
     
@@ -26,11 +26,11 @@ tags:
 - **核心价值**: 并非简单的工具拼接，而是构建完整的解决方案，例如帮企业节省人工成本。
     
 
-## 🤖 2. 核心案例演示：AI 超级私人助手 [[01:45](http://www.youtube.com/watch?v=JnepOnstpAQ&t=105)]
+##  2. 核心案例演示：AI 超级私人助手 [[01:45](http://www.youtube.com/watch?v=JnepOnstpAQ&t=105)]
 
 这是课程中最核心的项目，演示了一个多功能的AI Agent如何通过自然语言（文字或语音）处理复杂任务。
 
-### ⚡ 功能展示
+###  功能展示
 
 1. **邮件自动发送 [[02:00](http://www.youtube.com/watch?v=JnepOnstpAQ&t=120)]**
     
@@ -61,7 +61,7 @@ tags:
     - **流程**: Search Agent 爬取关于CrossFit的实时网页数据 -> 学习整理 -> 交给ChatGPT撰写博客 -> 返回结果。
         
 
-### 🏗️ 架构解析：多智能体系统 (Multi-Agent Architecture) [[05:00](http://www.youtube.com/watch?v=JnepOnstpAQ&t=300)]
+###  架构解析：多智能体系统 (Multi-Agent Architecture) [[05:00](http://www.youtube.com/watch?v=JnepOnstpAQ&t=300)]
 
 这是该项目的高级之处，不是一个巨大的Prompt解决所有问题，而是采用了**分层架构**：
 
@@ -78,9 +78,9 @@ tags:
     - 🔎 **Search/Content Agent**: 负责联网搜索和长文写作。
         
 
-## 🛠️ 3. 关键实操步骤与技术点 (带时间戳)
+##  3. 关键实操步骤与技术点 (带时间戳)
 
-### 🚀 起步阶段
+###  起步阶段
 
 - **[[07:16](http://www.youtube.com/watch?v=JnepOnstpAQ&t=436)] 注册与模板导入**:
     
@@ -89,7 +89,7 @@ tags:
     - 可以直接通过 `Import from file` 导入哈利提供的现成 Workflow 模板，快速开始修改而不是从零造轮子。
         
 
-### 🔧 搭建过程
+###  搭建过程
 
 - **[[38:32](http://www.youtube.com/watch?v=JnepOnstpAQ&t=2312)] 从零重建个人助手**:
     
@@ -122,7 +122,7 @@ tags:
     - 应该使用 N8N 的 `Credentials` 或环境变量功能，确保密钥安全，且方便在不同环境（测试/生产）间切换。
         
 
-## 📝 4. 总结与建议 [[09:08:36](http://www.youtube.com/watch?v=JnepOnstpAQ&t=32916)]
+##  4. 总结与建议 [[09:08:36](http://www.youtube.com/watch?v=JnepOnstpAQ&t=32916)]
 
 - **行动建议**: 看完教程只是第一步，必须动手去**执行**。哪怕是下载模板跑通一个简单的流程，也比只看不做要强。
     
@@ -133,7 +133,7 @@ tags:
 
 ---
 
-### 💡 给你的学习建议 (结合你的背景)
+###  给你的学习建议 (结合你的背景)
 
 - **结合 Obsidian**: 你可以将视频中提到的**Multi-Agent架构**用 Obsidian 的 **Mermaid** 语法画出来，梳理 Master Agent 如何分发任务给 Sub-Agents。
     
