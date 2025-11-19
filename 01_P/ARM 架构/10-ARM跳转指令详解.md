@@ -25,7 +25,7 @@ void A()
 
 ARM架构提供了多条跳转指令来满足不同的程序流程控制需求。核心指令包括 `B`、`BL`、`BX` 和 `BLX`。
 
-![](attachments/10_ARM跳转指令详解/file-20251118223703654.png)
+![](attachments/10-ARM跳转指令详解/file-20251119154256388.png)
 
 ## B: 分支 (Branch)
 

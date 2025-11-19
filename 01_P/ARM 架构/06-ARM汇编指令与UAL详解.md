@@ -10,7 +10,7 @@ tags:
 *   **ARM指令集**：32位，每条指令占据32位，高效，但是占用空间较大。
 *   **Thumb指令集**：16位，每条指令占据16位，节省空间。
 
-为了在效率和空间之间取得平衡，CPU可以在两种模式间切换。通过 [程序状态寄存器 (PSR)](05_ARM处理器核心寄存器详解.md) 中的“T”位来区分当前指令是Thumb指令（T=1）还是ARM指令（T=0）。
+为了在效率和空间之间取得平衡，CPU可以在两种模式间切换。通过 [程序状态寄存器 (PSR)](05-ARM处理器核心寄存器详解.md) 中的“T”位来区分当前指令是Thumb指令（T=1）还是ARM指令（T=0）。
 
 假设函数A使用Thumb指令编写，函数B使用ARM指令编写，调用它们时需要切换CPU状态。这通过在跳转到函数地址时，修改PC寄存器（Program Counter）的最低位（BIT0）来实现：
 *   调用函数A（Thumb）：`PC = 函数A地址 + 1`（设置BIT0为1）
@@ -35,7 +35,7 @@ tags:
 *   `ADR/LDR`：地址加载
 *   `CMP`：比较
 
-![](attachments/06_ARM汇编指令与UAL详解/ARM指令集概览.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951218.png)
 
 ---
 
@@ -45,7 +45,7 @@ tags:
 
 如果希望深入学习，可以参考《ARM Cortex-M3与Cortex-M4权威指南.pdf》。
 
-![](attachments/06_ARM汇编指令与UAL详解/第五章指令集内容概览.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951192.png)
 
 ---
 
@@ -55,7 +55,7 @@ tags:
 
 其统一汇编语言（UAL）格式通常如下：
 
-![](attachments/06_ARM汇编指令与UAL详解/ARM通用指令格式.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951217.png)
 
 *   `Operation`：指令助记符，如`ADD`、`MOV`。
 *   `{cond}`：条件码，指令仅在满足特定条件时执行。
@@ -63,7 +63,7 @@ tags:
 *   `Rd`：目标寄存器，用于存储运算结果。
 *   `Rn`, `Operand2`：源操作数。
 
-![](attachments/06_ARM汇编指令与UAL详解/ARM指令集分类.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951219.png)
 
 ---
 
@@ -71,13 +71,13 @@ tags:
 
 数据处理指令用于执行算术和逻辑运算。
 
-![](attachments/06_ARM汇编指令与UAL详解/数据处理指令.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951203.png)
 
 **条件码后缀**
 
 大多数ARM指令都可以带条件码执行，这使得代码更高效，避免了不必要的跳转。
 
-![](attachments/06_ARM汇编指令与UAL详解/条件码后缀.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951202.png)
 
 ---
 
@@ -91,16 +91,16 @@ tags:
 *   **STM (Store Multiple Registers)**：将多个寄存器的数据存储到内存。
 
 **LDR 指令语法**
-![](attachments/06_ARM汇编指令与UAL详解/LDR指令语法.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951208.png)
 
 **STR 指令语法**
-![](attachments/06_ARM汇编指令与UAL详解/STR指令语法.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951204.png)
 
 **LDM 指令语法**
-![](attachments/06_ARM汇编指令与UAL详解/LDM指令语法.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951211.png)
 
 **STM 指令语法**
-![](attachments/06_ARM汇编指令与UAL详解/STM指令语法.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951207.png)
 
 **地址模式 (addr_mode)**
 *   `IA` (Increment After)：传输后增加地址（默认）。
@@ -118,13 +118,13 @@ tags:
 跳转指令用于改变程序的执行流程。
 
 *   **B (Branch)**：直接跳转到指定地址。
-    ![](attachments/06_ARM汇编指令与UAL详解/B指令语法.png)
+    ![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951212.png)
 *   **BL (Branch with Link)**：在跳转前，将返回地址（下一条指令的地址）保存到链接寄存器（LR）中，常用于函数调用。
-    ![](attachments/06_ARM汇编指令与UAL详解/BL指令语法.png)
+    ![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951215.png)
 *   **BX (Branch and eXchange)**：跳转并根据目标地址的最低位切换处理器状态（0=ARM, 1=Thumb）。
-    ![](attachments/06_ARM汇编指令与UAL详解/BX指令语法.png)
+    ![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951213.png)
 *   **BLX (Branch with Link and eXchange)**：带返回的跳转并切换状态。
-    ![](attachments/06_ARM汇编指令与UAL详解/BLX指令语法.png)
+    ![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951216.png)
 
 ---
 
@@ -138,7 +138,7 @@ tags:
 
 简单来说，**立即数**就是直接写在汇编指令里的数字，比如 `MOV R0, #5` 里的 `5`。但由于ARM指令长度固定，能直接写进指令的立即数是有限制的。这句话的意思是：不是所有数字都能直接作为立即数。只有那些可以通过一个8位的“小数字”，经过“偶数次循环转动”（想象成把这个8位数字的二进制位像轮子一样转动，并且转动的次数必须是偶数）后能得到的32位数字，才能被ARM指令直接识别为立即数。如果一个数字不符合这个规则，你就不能直接把它写在指令里，而需要通过其他方式（比如 `LDR` 伪指令从内存中加载）来使用它。这个限制是为了让指令设计更高效，同时还能覆盖大部分常用的数字。
 
-![](attachments/06_ARM汇编指令与UAL详解/立即数定义.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951196.png)
 
 **LDR 伪指令**
 
@@ -156,7 +156,7 @@ tags:
 `ADR`（Address）伪指令用于获取一个标号（label）的地址，它通常被编译器转换为一条基于PC的加法或减法指令。
 - **标号（Label）** 在汇编语言中是一个符号名称，用于标记内存中的特定位置（通常是指令或数据地址）。它充当地址的占位符，使程序员可以通过名称而非绝对数值地址来引用位置，从而提高代码的可读性和可维护性。汇编器在汇编过程中会将这些标号解析为实际的内存地址。
 
-![](attachments/06_ARM汇编指令与UAL详解/ADR指令语法.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951220.png)
 
 `ADR R0, Loop`
 - 在汇编语言中，`Loop` 通常是一个**标号（Label）**，它标记了代码中的一个特定位置，通常是循环的起始点或一个需要反复跳转到的位置。它是一个符号化的地址，`ADR` 伪指令（或其他跳转指令）可以引用它。
@@ -167,4 +167,4 @@ tags:
 
 不同的汇编器（如GNU Assembler和armasm）在语法上存在一些差异。下表列出了一些常见的区别：
 
-![](attachments/06_ARM汇编指令与UAL详解/GNU汇编器与armasm语法比较.png)
+![](attachments/06-ARM汇编指令与UAL详解/file-20251119153951210.png)
