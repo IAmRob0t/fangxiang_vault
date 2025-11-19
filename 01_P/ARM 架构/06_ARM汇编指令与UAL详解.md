@@ -35,7 +35,7 @@ tags:
 *   `ADR/LDR`：地址加载
 *   `CMP`：比较
 
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033852.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-1.png)
 
 ---
 
@@ -45,7 +45,7 @@ tags:
 
 如果希望深入学习，可以参考《ARM Cortex-M3与Cortex-M4权威指南.pdf》。
 
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033860.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-2.png)
 
 ---
 
@@ -55,7 +55,7 @@ tags:
 
 其统一汇编语言（UAL）格式通常如下：
 
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033852%201.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-3.png)
 
 *   `Operation`：指令助记符，如`ADD`、`MOV`。
 *   `{cond}`：条件码，指令仅在满足特定条件时执行。
@@ -63,7 +63,7 @@ tags:
 *   `Rd`：目标寄存器，用于存储运算结果。
 *   `Rn`, `Operand2`：源操作数。
 
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033851.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-4.png)
 
 ---
 
@@ -71,13 +71,13 @@ tags:
 
 数据处理指令用于执行算术和逻辑运算。
 
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033858.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-5.png)
 
 **条件码后缀**
 
 大多数ARM指令都可以带条件码执行，这使得代码更高效，避免了不必要的跳转。
 
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033859.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-6.png)
 
 ---
 
@@ -91,16 +91,16 @@ tags:
 *   **STM (Store Multiple Registers)**：将多个寄存器的数据存储到内存。
 
 **LDR 指令语法**
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033857.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-7.png)
 
 **STR 指令语法**
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033858%201.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-8.png)
 
 **LDM 指令语法**
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033856.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-9.png)
 
 **STM 指令语法**
-![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033857%201.png)
+![](attachments/06_ARM汇编指令与UAL详解/image-10.png)
 
 **地址模式 (addr_mode)**
 *   `IA` (Increment After)：传输后增加地址（默认）。
@@ -118,9 +118,9 @@ tags:
 跳转指令用于改变程序的执行流程。
 
 *   **B (Branch)**：直接跳转到指定地址。
-    ![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033854%201.png)
+    ![](attachments/06_ARM汇编指令与UAL详解/image-11.png)
 *   **BL (Branch with Link)**：在跳转前，将返回地址（下一条指令的地址）保存到链接寄存器（LR）中，常用于函数调用。
-    ![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033854.png)
+    ![](attachments/06_ARM汇编指令与UAL详解/image-12.png)
 *   **BX (Branch and eXchange)**：跳转并根据目标地址的最低位切换处理器状态（0=ARM, 1=Thumb）。
     ![](attachments/06_ARM汇编指令与UAL详解/file-20251119160033855.png)
 *   **BLX (Branch with Link and eXchange)**：带返回的跳转并切换状态。
