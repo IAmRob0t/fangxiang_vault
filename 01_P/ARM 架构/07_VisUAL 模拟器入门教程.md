@@ -17,7 +17,7 @@ VisUAL 是一款轻量级的 ARM 汇编模拟器，非常适合学习和测试 A
     - **下载地址**: [https://salmanarif.bitbucket.io/visual/downloads.html](https://salmanarif.bitbucket.io/visual/downloads.html)
     - **使用指南**: [https://salmanarif.bitbucket.io/visual/user_guide/index.html](https://salmanarif.bitbucket.io/visual/user_guide/index.html)
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953618.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031551.png)
 
 
 ---
@@ -30,7 +30,7 @@ VisUAL 的界面主要分为三个区域：左侧的代码编辑区，右侧的�
 1.  点击菜单栏的 `Settings`。
 2.  在 `Code editor font size` 处输入合适的字号（例如 40），然后按回车键即可生效。
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953619.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031550.png)
 
 
 ---
@@ -39,13 +39,13 @@ VisUAL 的界面主要分为三个区域：左侧的代码编辑区，右侧的�
 
 让我们通过一个将数值 `0x1234` 存入地址 `0x20000` 的简单程序来学习核心操作。
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953609.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031554.png)
 
 ## 步骤 1：编写代码
 
 在左侧的代码编辑区，我们可以直接编写汇编代码。
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953601.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031555%201.png)
 
 ## 步骤 2：常见错误与修正
 
@@ -70,9 +70,9 @@ VisUAL 提供了多种执行方式，最常用的是：
 - **Execute (F5)**: 全速执行，直到程序结束或遇到断点。
 - **Step Forwards**: 单步执行，即每次只执行一条指令，便于观察每一步的变化。
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953611.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031553.png)
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953615.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031552.png)
 
 ---
 
@@ -84,7 +84,7 @@ VisUAL 提供了多种执行方式，最常用的是：
 
 通过单步执行，我们可以看到每条指令执行后，右侧寄存器状态区的变化。执行前两条指令后，`R0` 和 `R1` 的值会变为我们代码中设定的值。
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953613.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031552%201.png)
 
 ## 步骤 2：观察内存
 
@@ -99,7 +99,7 @@ VisUAL 提供了多种执行方式，最常用的是：
 
 VisUAL 同样支持带有条件的指令。例如，下面的代码比较 `R1` 和 `R2` 的大小，并根据结果将较大的值存入 `R0` 指向的内存地址。
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953617.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031551%201.png)
 
 - `CMP R1, R2`: 比较 `R1` 和 `R2`，结果影响 `CPSR` 状态寄存器。
 - `STRLE R1, [R0]`: 如果 `R1 <= R2` (LE: Less or Equal)，则执行存储。
@@ -117,6 +117,6 @@ VisUAL 同样支持带有条件的指令。例如，下面的代码比较 `R1` �
 
 下图列出了一些常用的 ARM 指令，以供快速参考。
 
-![](attachments/07-VisUAL%20模拟器入门教程/file-20251119153953603.png)
+![](attachments/07_VisUAL%20模拟器入门教程/file-20251119160031555.png)
 
 

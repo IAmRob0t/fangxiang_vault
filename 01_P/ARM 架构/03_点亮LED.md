@@ -23,7 +23,7 @@ LED 的驱动方式主要有两类：
 
 不同电源电压、不同芯片驱动能力，会带来不同的电路组合，因此常见四种方式：
 
-![](attachments/03-点亮LED/file-20251119153938076.png)
+![](attachments/03_点亮LED/file-20251119160040954.png)
 
 方式 1：使用引脚输出 3.3V 点亮 LED，输出 0V 熄灭 LED。
 方式 2：使用引脚拉低到 0V 点亮 LED，输出 3.3V 熄灭 LED。
@@ -160,7 +160,7 @@ RCC_APB2ENR地址：`0x40021000 + 0x18`
 
 ## 再看芯片手册：设置 GPIOB0 为 GPIO、用作输出
 
-![](attachments/03-点亮LED/file-20251119153938078.png)
+![](attachments/03_点亮LED/file-20251119160040955.png)
 
 GPIOB 的基地址：
 
@@ -174,13 +174,13 @@ GPIOB_CRL 地址：`0x40010C00 + 0x00`
 
 GPIOB_CRL地址：`0x40010C00 + 0x0C`
 
-![](attachments/03-点亮LED/file-20251119153938075.png)
+![](attachments/03_点亮LED/file-20251119160040956.png)
 
 ### 方法2：直接写寄存器，一次操作即可，高效
 
 GPIOB_CRL地址：`0x40010C00 + 0x10`
 
-![](attachments/03-点亮LED/file-20251119153938067.png)
+![](attachments/03_点亮LED/file-20251119160040957%201.png)
 
 # 六、LED 编程
 
@@ -207,7 +207,7 @@ Val = *p;							// 读寄存器
 
 使能GPIOB、设置GPIOB0为输出，循环让GPIOB0输出高、低电平：
 
-![](attachments/03-点亮LED/file-20251119153938071.png)
+![](attachments/03_点亮LED/file-20251119160040957.png)
 
 ## 谁调用 `main` 函数：启动文件: `start.s`
 
@@ -215,11 +215,11 @@ Val = *p;							// 读寄存器
 
 设置栈，调用 `main` 函数：
 
-![[attachments/03-点亮LED/file-20251119153938065.png]]
+![[attachments/03_点亮LED/file-20251119160040958.png]]
 
 # 七、程序启动时的内存操作
 
-![](attachments/03-点亮LED/file-20251119153938061.png)
+![](attachments/03_点亮LED/file-20251119160040959.png)
 
 1. **栈指针初始化：** 程序从地址 `0x08000000` 处的重置向量开始执行，第一条指令通常是 `LDR SP, =...` (图中的 `LDR SP, =(0x20000000 + 0x10000)`)，它将 **栈指针 (SP)** 初始化，使其指向 **内存** 区域的顶部（即 $0x20000000 + 0x10000$）。
 2. **跳转主程序：** 接下来执行 `BL main`（或类似的跳转指令），程序流程跳转到 `main` 函数的源代码部分开始执行。
