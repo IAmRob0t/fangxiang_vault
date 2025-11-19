@@ -116,12 +116,12 @@ Loop:
     ADR  LR, Ret     ; 将Ret的地址（返回地址）加载到LR
     ADR  PC, Delay   ; 将Delay的地址加载到PC，实现跳转
 
-Ret:
+Ret
     MOV  R1, #1
 
-Delay:
+Delay
     MOV  R0, #1000
-Loop:
+Loop
     SUBS R0, R0, #1
     BNE  Loop
     MOV  PC, LR      ; 返回
