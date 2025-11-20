@@ -30,7 +30,7 @@ tags:
 
 我们的代码（如 `start.S` 和 `main.c`）通过一个工具链转变为可执行程序，主要步骤如下：
 
-![](attachments/11_编程知识/image-01.png)
+![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700941.png)
 
 *   **编译 (Compile)**：编译器（如 GCC）将 C 语言代码翻译成汇编代码。
 *   **汇编 (Assemble)**：汇编器将汇编代码转换成包含机器码的目标文件（`.o` 文件）。
@@ -47,7 +47,7 @@ tags:
 fromelf --text -a -c --output=led.dis Objects\led_c.axf
 ```
 
-![](attachments/11_编程知识/image-02.png)
+![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700940.png)
 
 ### 使用 GCC 工具链
 
@@ -65,30 +65,30 @@ $(OBJDUMP) -D -m arm led.elf > led.dis	# OBJDUMP 通常是 arm-linux-gnueabihf-o
 
 ### 4.1 STM32F103 (Cortex-M) 反汇编
 
-![](attachments/11_编程知识/image-03.png)
+![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700939.png)
 
 ### 4.2 STM32MP157 (Cortex-A) 反汇编
 
-![](attachments/11_编程知识/image-04.png)
+![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700938%201.png)
 
 ### 4.3 IMX6ULL (Cortex-A) 反汇编
 
-![](attachments/11_编程知识/image-05.png)
+![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700939%201.png)
 
 ## 5. 深入一步：伪指令与流水线
 
-参考资料： ![ARM ArchitectureReference Manual ARMv7-A and ARMv7-R edition, p.410](01_P/ARM%20架构/attachments/ARM%20ArchitectureReference%20Manual%20ARMv7-A%20and%20ARMv7-R%20edition.pdf#page=410&rect=136,389,514,675)
+参考资料： ![ARM ArchitectureReference Manual ARMv7-A and ARMv7-R edition, p.410](attachments/ARM%20ArchitectureReference%20Manual%20ARMv7-A%20and%20ARMv7-R%20edition.pdf#page=410&rect=136,389,514,675)
 
 你可能已经注意到，简单的 `LDR` 伪指令被转换成了 `MOV` 或者 `LDR PC, [PC, #offset]` 这样的指令。这是为什么呢？
 
 *   **指令集编码不同**：不同的 ARM 处理器系列使用不同的指令集编码。
     *   **Thumb-2 (Cortex-M)**：指令长度可以是 16 位或 32 位，编码更紧凑。
-        ![](attachments/11_编程知识/image-06.png)
+        ![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700938.png)
     *   **ARM (Cortex-A)**：指令长度通常是 32 位。
-        ![](attachments/11_编程知识/image-07.png)
+        ![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700937.png)
 *   **PC 相对寻址**：`LDR` 伪指令通常被实现为 PC 相对寻址，即从当前程序计数器 (PC) 的位置加上一个偏移量来加载数据。
 *   **流水线 (Pipeline)**：ARM 处理器使用流水线技术来提升效率。这意味着在执行当前指令时，CPU 已经在预取和解码后续的指令。因此，PC 的值通常是**当前执行指令地址 + 4 (Thumb-2) 或 + 8 (ARM 指令集)**。这就是为什么反汇编代码中 `[PC, #offset]` 的计算基址不是当前指令地址的原因。
-  ![ARM ArchitectureReference Manual ARMv7-A and ARMv7-R edition, p.45](01_P/ARM%20架构/attachments/ARM%20ArchitectureReference%20Manual%20ARMv7-A%20and%20ARMv7-R%20edition.pdf#page=45&rect=137,351,541,420)
+  ![ARM ArchitectureReference Manual ARMv7-A and ARMv7-R edition, p.45](attachments/ARM%20ArchitectureReference%20Manual%20ARMv7-A%20and%20ARMv7-R%20edition.pdf#page=45&rect=137,351,541,420)
 
 # C 与汇编的交互与底层实现
 
@@ -110,7 +110,7 @@ C 语言和汇编语言的混合编程是嵌入式开发中的常见场景。理
 -   **R4 - R11**：这些寄存器在函数调用前后必须保持不变。如果被调用的函数需要使用这些寄存器，它必须在函数入口处将它们的初始值**入栈 (Push)** 保存，并在函数退出前**出栈 (Pop)** 恢复。这些寄存器也被称为“被调用者保存的寄存器”(Callee-saved registers)。
 
     下图展示了在函数入口处，通过一条 `PUSH` 指令将 `R4`, `R5`, `R7` 和 `LR` (链接寄存器) 保存到栈中的情景。
-    ![](attachments/11_编程知识/image-08.png)
+    ![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700936.png)
 
 ## 2. 汇编调用 C 函数示例
 
@@ -150,7 +150,7 @@ cmp r0, #0          ; 3. delay 函数的返回值已保存在 R0 中，这里将
 
 下图是典型的 Cortex-M 微控制器启动代码 `Reset_Handler` 的反汇编视图。
 
-![](attachments/11_编程知识/image-09.png)
+![](attachments/11_C与汇编_ARM底层编程与启动过程/file-20251120225700932.png)
 
 这段代码是 MCU 上电后执行的第一段程序，主要负责：
 1.  **关闭所有中断** (`cpsid i`)，防止在初始化过程中被意外打断。
