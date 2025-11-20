@@ -7,6 +7,10 @@ created: 2025-11-20
 description: "解决 Google AI Studio(Gemini) 403 问题，您不在支持的区域，Failed to list models: permission denied.Please try again._如果您在尝试打开 google ai studio 后看到此页面,可能是因为 google ai studio"
 tags:
   - clippings
+  - AI
+  - Google
+  - Gemini
+  - Troubleshooting
 ---
 
 # 解决 Google AI Studio 403 “您不在支持的区域”问题
