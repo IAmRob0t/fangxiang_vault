@@ -16,7 +16,7 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "strictLineBreaks": true,
+  "strictLineBreaks": false,
   "mobileToolbarCommands": [
     "editor:insert-codeblock",
     "editor:set-heading",
